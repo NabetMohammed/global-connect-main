@@ -1,0 +1,34 @@
+LOCAL AI SETUP — GEMINI
+=======================
+
+1. Open Google AI Studio and create a Gemini API key:
+   https://aistudio.google.com/apikey
+
+2. In the project root, create/edit .env.local
+
+3. Add these lines:
+
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+GEMINI_MODEL=gemini-3.1-flash-lite
+
+4. Never commit or share your real API key publicly.
+
+5. In a terminal at the project root run:
+
+npm install
+npm run dev
+
+6. Open http://localhost:3000
+7. Open the AI Assistant and send a test message.
+
+The assistant still reads company information from:
+
+data/knowledge.txt
+
+Common errors:
+400 = invalid request/model configuration
+401/403 = invalid API key or project/API permission issue
+429 = Gemini free-tier rate limit/quota reached
+500 = local server/config issue
+
+If you change .env.local, restart npm run dev.
